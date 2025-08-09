@@ -1,0 +1,584 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins,sans-serif;
+}
+
+
+/* Header style*/
+.Header{
+  display: flex;
+  background-color: skyblue;
+  width: 100%;
+  height: 10rem;
+  justify-content: space-around;
+  align-items: center;
+  font-family: poppins,sans-serif ;
+  position: fixed;
+  z-index: 1000;
+
+  /* social ions*/
+  
+}
+/* variant small images*/
+.product-variations {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.variation-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  gap: 1rem;
+}
+
+.variation-thumb:hover {
+  transform: scale(1.1);
+  border-color: #15960c;
+}
+
+
+ 
+.App-logo{
+   width: 15rem;
+   height: 15rem;
+}
+.header-icon{
+  justify-content: space-between;
+ 
+}
+.shop-icon{
+   margin-right: 2rem;
+   font-size: 2rem;
+   color: rgb(17, 87, 6);
+}
+.love-icon{
+   color: red;
+}
+.App-ul{
+  display: flex;
+  gap: 2rem;
+}
+.App-page-list{
+  list-style: none;
+  font-size: 1rem;
+}
+.App-hamburger{
+  display: none;
+}
+
+/* hero style*/
+.App-hero {
+  position: relative;
+  width: 100%;
+  height: 60rem;
+  overflow: hidden;
+  color: black;
+  padding-top: 10rem;
+}
+.hero-header-title{
+  text-align: start;
+  margin-top: 20px;
+  font-weight: bolder;
+  border: 1px solid skyblue;
+  width: 17%;
+  color: white;
+  background-color: rgb(24, 37, 43);
+  border-radius: 5px;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+
+}
+
+ .hero-image1{
+  width: 25rem;
+  height: 35rem;
+ }
+ .hero-image3{
+ display: none;
+ }
+ .hero-image{
+  width: 25rem;
+  height: 28rem;
+ }
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 6rem;
+  text-align: center;
+  margin-left: 5rem;
+  display: flex;
+}
+.hero-2klin-image{
+  width: 35rem;
+  height: 36rem;
+}
+
+/* side ions of products*/
+.product-actions {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.product-card:hover .product-actions {
+  opacity: 1;
+}
+
+.product-actions button {
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.product-actions button:hover {
+  background: #f5f5f5;
+}
+
+/* products style*/
+.products-container{
+  width: 100%;
+  height: fit-content;
+}
+ .products-header {
+  width: 100%;
+  height: 6rem;
+  background-color: #87ceeb;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Products grid*/
+
+.products-grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fdfdfd;
+  
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: start;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+   
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: red;
+  font-weight: bold;
+}
+
+
+.moving-image {
+  height: 4rem;
+  width: 4rem; 
+  object-fit: contain; 
+  position: absolute;
+  animation: moveLeftRight 8s ease-in-out infinite;
+}
+
+
+
+/* second prodcuts style for icons to be visi*/
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 40px; 
+  justify-content: center;
+  opacity: 1 !important; 
+  position: absolute;
+  left: 10px;
+  top: 20%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* Style for the buttons */
+.product-actions button {
+  background: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  font-size: 1.3rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.product-actions button:hover {
+  background: #ffc107;
+  color: #fff;
+}
+
+
+/* Animation */
+@keyframes moveLeftRight {
+  0% {
+    left: -10%;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: -10%;
+  }
+}
+
+
+.delay-1 {
+  animation-delay: 0s;
+}
+
+.delay-2 {
+  animation-delay: 4s; 
+}
+
+
+/* Header search */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.search-input{
+  padding: 0.6rem;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.buy-button {
+  padding: 0.6rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+
+/* moving image*/
+
+.products-header {
+  width: 100%;
+  height: 4rem;
+  background-color: #87ceeb;
+  position: relative;
+  overflow: hidden;
+  font-family: poppins,sans-serif;
+}
+
+.moving-image {
+  height: 4rem;
+  width: auto;
+  position: absolute;
+  animation: moveLeftRight 15s ease-in-out infinite;
+}
+
+
+/* overlay for porducts*/
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: rgb(46, 51, 58);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: start;
+  position: relative;
+  color: white;
+  box-shadow: 0 10px 30px rgba(139, 132, 132, 0.3);
+}
+
+.modal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.buy-button {
+  padding: 0.6rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #218838;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
+/* Animation keyframes */
+@keyframes moveLeftRight {
+  0% {
+    left: -10%;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: -10%;
+  }
+}
+
+
+.delay-1 {
+  animation-delay: 0s;
+}
+
+.delay-2 {
+  animation-delay: 3s; 
+}
+
+/* payment modal*/
+
+
+
+
+@media screen and (max-width: 768px) {
+  .App-header {
+    width: 100%;
+    
+  }
+  .App-ul{
+  display: none;
+}
+.header-icon{
+  display: none !important;
+ 
+}
+.Header{
+  display: flex;
+  background-color: skyblue;
+  width: 100%;
+  height: 3.5rem;
+  justify-content: space-around;
+  align-items: center;
+  font-family: poppins,sans-serif ;
+   
+
+}
+ .search-bar-container {
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100%;             
+}
+.search-bar-container {
+  display: flex;
+  margin-right: 2rem;
+  justify-content: center;
+  align-items: center;
+  height: 70px; /* adjust based on your header height */
+}
+
+.search-input {
+  width: 200px;
+  padding: 0.9rem;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+}
+
+
+.App-logo{
+   width: 7rem;
+   height: 5rem;
+   padding-left: 1rem;
+  
+}
+.App-hamburger{
+  display: flex;
+  padding-right: 2rem;
+  color: rgb(30, 168, 11);
+  font-weight: bolder;
+  font-size: 5rem;
+}
+
+.App-hero{
+  padding-top: 0rem;
+  width: 100%;
+  height: 40rem;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: start;
+  margin-left: 1.5rem;
+  display: block;
+}
+.hero-content2{
+   
+  padding-top: 1rem;
+  display: block;
+  text-align: center;
+}
+.hero-header-title{
+  text-align: start;
+  margin-top: 10px;
+  font-weight: 3rem;
+  border: 1px solid skyblue;
+  width: 60%;
+  margin-left:1.5rem ;
+  padding-left: 0.5rem;
+  color: white;
+  background-color: rgb(24, 37, 43);
+  border-radius: 5px;
+
+}
+.hero-image1{
+  display: none;
+ }
+ .hero-image{
+   display: none;
+ }
+ .hero-image3{
+   display: block;
+    width: 8rem;
+    height: 8rem;
+    padding-top: 0;
+    margin-top: 0;
+ }
+ .hero-2klin-image{
+   width: 28rem;
+   height: 25rem;
+   padding-right: 5rem;
+}
+  
+}
+ @media screen and (max-width: 1024px) {
+  .products-grid-container {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .products-grid-container {
+    grid-template-columns: 1fr; 
+  }
+}
+
