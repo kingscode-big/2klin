@@ -13,32 +13,37 @@ import bodywash from '../Image/bodywash-Photoroom.png';
 import toilet from '../Image/toilet-Photoroom.png';
 import stain from '../Image/retain remover-Photoroom.png';
 import soap from '../Image/soap multi-Photoroom.png';
-
+import toiletwash from  '../Image/toiletwash-Photoroom.png'
+import airfresh  from '../Image/airfresh-Photoroom.png'
 export default function Porducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [selectedProductForPayment, setSelectedProductForPayment] = useState(null);
   const [paymentMethod, setPaymentMethod] = useState(null);
-  const [paymentStep, setPaymentStep] = useState('selectMethod'); // 'selectMethod', 'creditCardOptions', 'cartUnavailable', 'bankTransferDetails'
+  const [paymentStep, setPaymentStep] = useState('selectMethod'); 
 
   const [mainImages, setMainImages] = useState({});
   const [hoverImages, setHoverImages] = useState({});
-
+ 
   const [quantity, setQuantity] = useState(1);
 
   const products = [
-    { id: 1, name: 'Multipurpose soap', image: well, price: 45, rating: 4.5, size: 'large', description: 'A versatile soap for all purposes.' },
-    { id: 2, name: 'Toilet Cleaner', image: klin2, price: 55, rating: 5, size: 'medium', description: 'Effective cleaner for your toilet.' },
-    { id: 3, name: 'Tile cleaner', image: klin, price: 49, rating: 4, size: 'large', description: 'Keeps your tiles sparkling clean.' },
-    { id: 4, name: 'Air Refreshner', image: klin, price: 60, rating: 4, size: 'large', description: 'Freshens the air instantly.' },
-    { id: 5, name: 'Bleach', image: bleach, price: 60, rating: 4.5, size: 'large', description: 'Powerful bleach for whitening.' },
-    { id: 6, name: 'Multipurpose soap', image: klin, price: 60, rating: 5, size: 'small', description: 'Small but effective soap.' },
-    { id: 7, name: 'Soap Survenirs', image: survenirs, price: 60, rating: 5, size: 'medium', description: 'Beautiful souvenir soaps.' },
-    { id: 8, name: 'Body wash', image: bodywash, price: 60, rating: 3.5, size: 'large', description: 'Gentle and moisturizing body wash.' },
-    { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 60, rating: 3.5, size: 'small', description: 'Keeps bacteria away.' },
-    { id: 10, name: 'Toilet soap', image: toilet, price: 60, rating: 3.5, size: 'small', description: 'Soap made for toilet use.' },
-    { id: 11, name: 'Stain remover', image: stain, price: 60, rating: 3.5, size: 'medium', description: 'Removes tough stains easily.' },
-    { id: 12, name: 'Multipurpose soap survenir', image: soap, price: 60, rating: 3.5, size: 'small', description: 'Souvenir multipurpose soap.' },
+    { id: 1, name: 'Multipurpose soap', image: well, price: 6000, rating: 4.5, size: 'large', description: 'A versatile soap for all purposes.' },
+    { id: 2, name: 'Toilet Cleaner', image: klin2, price: 2000, rating: 5, size: 'medium', description: 'Effective cleaner for your toilet.' },
+    { id: 3, name: 'Tile cleaner', image: toiletwash, price: 2000, rating: 4, size: 'large', description: 'Keeps your tiles sparkling clean.' },
+    { id: 4, name: 'Air Refreshner', image: airfresh, price: 2000, rating: 4, size: 'large', description: 'Freshens the air instantly.' },
+    { id: 5, name: 'Bleach', image: bleach, price: 7000, rating: 4.5, size: 'large', description: 'Powerful bleach for whitening.' },
+    { id: 6, name: 'Multipurpose soap', image: klin, price: 6000, rating: 5, size: 'large', description: 'Small but effective soap.' },
+    { id: 6, name: 'Multipurpose soap', image: klin, price: 1000, rating: 5, size: 'small', description: 'Small but effective soap.' },
+    { id: 7, name: 'Soap Survenirs', image: survenirs, price: 10, rating: 5, size: 'medium', description: 'Beautiful souvenir soaps.' },
+    { id: 8, name: 'Body wash', image: bodywash, price: 1000, rating: 3.5, size: 'medium', description: 'Gentle and moisturizing body wash.' },
+    { id: 8, name: 'Body wash', image: bodywash, price: 2000, rating: 3.5, size: 'large', description: 'Gentle and moisturizing body wash.' },
+    { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 1000, rating: 3.5, size: 'small', description: 'Keeps bacteria away.' },
+    { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 2000, rating: 3.5, size: 'medium', description: 'Keeps bacteria away.' },
+    { id: 10, name: 'Toilet wash', image: toilet, price: 2000, rating: 3.5, size: 'small', description: 'Soap made for toilet use.' },
+    { id: 11, name: 'Stain remover', image: stain, price: 2000, rating: 3.5, size: 'medium', description: 'Removes tough stains easily.' },
+    { id: 12, name: 'Multipurpose soap survenir', image: soap, price: 1000, rating: 3.5, size: 'small', description: 'Souvenir multipurpose soap.' },
+    { id: 12, name: 'Multipurpose soap survenir', image: soap, price: 2000, rating: 3.5, size: 'large', description: 'Souvenir multipurpose soap.' },
   ];
 
   const variationsMap = {
@@ -71,6 +76,7 @@ export default function Porducts() {
   const handleThumbnailClick = (productId, image) => {
     setMainImages(prev => ({ ...prev, [productId]: image }));
   };
+  
 
   useEffect(() => {
     if (selectedProduct) {
@@ -166,7 +172,7 @@ export default function Porducts() {
               </div>
 
               <h3 className="product-title">{product.name}</h3>
-              <p className="product-price">${product.price.toFixed(2)}</p>
+              <p className="product-price">₦{product.price.toFixed(2)}</p>
               <p className="product-size">Size: {product.size}</p>
               <div className="star-rating" style={{ color: '#ffc107', fontSize: '1rem' }}>
                 {renderStars(product.rating)}
@@ -205,7 +211,7 @@ export default function Porducts() {
             >
               <img src={getModalImage()} alt={selectedProduct.name} className="modal-image" />
               <h2>{selectedProduct.name}</h2>
-              <p className="modal-price">Price: ${selectedProduct.price.toFixed(2)}</p>
+              <p className="modal-price">Price: ₦{selectedProduct.price.toFixed(2)}</p>
               <p className="modal-size">Size: {selectedProduct.size}</p>
               <p className="modal-description">{selectedProduct.description || 'No description available.'}</p>
               <div className="modal-stars" style={{ color: '#ffc107', fontSize: '1.4rem' }}>
@@ -241,6 +247,8 @@ export default function Porducts() {
                   +
                 </button>
               </div>
+              <p className="modal-price">Price: ₦{(selectedProduct.price * quantity).toFixed(2)}</p>
+
 
               <button
                 name="buy-now-btn"

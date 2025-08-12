@@ -1,10 +1,9 @@
  import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import klin from '../Image/2klin-Photoroom.png';
-import { FiShoppingCart, FiHeart, FiMenu, FiX } from 'react-icons/fi';
-import { FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa'; 
- 
+import { FiShoppingCart, FiHeart, FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import { FaFacebookF, FaWhatsapp, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { FaTiktok } from 'react-icons/fa6'; // ✅ TikTok icon
 
 const listContainer = {
   hidden: { opacity: 0, y: -20 },
@@ -27,8 +26,6 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
 
   return (
     <section>
-    
-
       <motion.div
         className="Header"
         initial={{ y: -100, opacity: 0 }}
@@ -101,6 +98,16 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
           <FiHeart className="love-icon" size={30} />
         </motion.div>
 
+        {/* Social Media Icons */}
+        <div className="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+          <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok /></a> {/* TikTok */}
+          <a href="tel:+1234567890"><FiPhone /></a> {/* Call */}
+        </div>
+
         {/* Hamburger Menu */}
         <motion.div
           className="App-hamburger"
@@ -128,14 +135,14 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
             top: '3.5rem',
             left: 0,
             width: '100vw',
-            height: '500px',
+            height: '800px',
             backgroundColor: 'skyblue',
             color: 'white',
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'start',
-            justifyContent: 'start',
+            justifyContent: 'space-between',
             zIndex: 1000,
+            paddingBottom: '2rem',
           }}
         >
           <button
@@ -155,6 +162,7 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
             <FiX />
           </button>
 
+          {/* Menu Pages */}
           <ul
             style={{
               listStyle: 'none',
@@ -168,7 +176,7 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
                 key={i}
                 style={{
                   fontSize: '2rem',
-                  padding:'2rem',
+                  padding: '2rem',
                   cursor: 'pointer',
                   transition: 'color 0.3s',
                 }}
@@ -182,6 +190,23 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
               </li>
             ))}
           </ul>
+
+          {/* Social Icons at Bottom */}
+          <div
+            style={{
+              display: 'flex',
+              gap: '1rem',
+              justifyContent: 'center',
+              marginTop: 'auto',
+            }}
+          >
+            <a href="https://facebook.com/Daberechukwu" target="_blank" rel="noopener noreferrer"><FaFacebookF size={24} /></a>
+            <a href="https://wa.me/7047391302" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={24} /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
+            <a href="https://www.tiktok.com/@daberechukwu24" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a> {/* TikTok */}
+            <a href="tel:+2347047391302"><FiPhone size={24} /></a> {/* Call */}
+          </div>
         </motion.div>
       )}
     </section>

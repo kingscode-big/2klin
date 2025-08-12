@@ -18,9 +18,29 @@
   position: fixed;
   z-index: 1000;
 
-  /* social ions*/
-  
 }
+  /* Social Media Icons */
+  
+.social-icons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-left: 15px;
+ 
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #15960c; 
+  transform: scale(1.1);
+}
+  
+
 /* variant small images*/
 .product-variations {
   display: flex;
@@ -492,7 +512,7 @@
   margin-right: 2rem;
   justify-content: center;
   align-items: center;
-  height: 70px; /* adjust based on your header height */
+  height: 70px;
 }
 
 .search-input {
@@ -548,6 +568,8 @@
   background-color: rgb(24, 37, 43);
   border-radius: 5px;
 
+}.social-icons{
+  display: none;
 }
 .hero-image1{
   display: none;
@@ -580,5 +602,6 @@
   .products-grid-container {
     grid-template-columns: 1fr; 
   }
+  
 }
 
