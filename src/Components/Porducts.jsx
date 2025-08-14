@@ -35,11 +35,11 @@ export default function Porducts() {
     { id: 5, name: 'Bleach', image: bleach, price: 7000, rating: 4.5, size: 'large', description: 'Powerful bleach for whitening.' },
     { id: 6, name: 'Multipurpose soap', image: klin, price: 6000, rating: 5, size: 'large', description: 'Small but effective soap.' },
     { id: 6, name: 'Multipurpose soap', image: klin, price: 1000, rating: 5, size: 'small', description: 'Small but effective soap.' },
-    { id: 7, name: 'Soap Survenirs', image: survenirs, price: 10, rating: 5, size: 'medium', description: 'Beautiful souvenir soaps.' },
-    { id: 8, name: 'Body wash', image: bodywash, price: 1000, rating: 3.5, size: 'medium', description: 'Gentle and moisturizing body wash.' },
-    { id: 8, name: 'Body wash', image: bodywash, price: 2000, rating: 3.5, size: 'large', description: 'Gentle and moisturizing body wash.' },
+    { id: 7, name: 'Soap Survenirs', image: survenirs, price: 100, rating: 5, size: 'medium', description: 'Beautiful souvenir soaps.' },
+    { id: 8, name: 'Body wash', image: bodywash, price: 2000, rating: 3.5, size: 'medium', description: 'Gentle and moisturizing body wash.' },
+    { id: 8, name: 'Body wash', image: bodywash, price: 4000, rating: 3.5, size: 'large', description: 'Gentle and moisturizing body wash.' },
     { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 1000, rating: 3.5, size: 'small', description: 'Keeps bacteria away.' },
-    { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 2000, rating: 3.5, size: 'medium', description: 'Keeps bacteria away.' },
+    { id: 9, name: 'Antibacterial soap', image: antibacteria, price: 2000, rating: 3.5, size: 'big', description: 'Keeps bacteria away.' },
     { id: 10, name: 'Toilet wash', image: toilet, price: 2000, rating: 3.5, size: 'small', description: 'Soap made for toilet use.' },
     { id: 11, name: 'Stain remover', image: stain, price: 2000, rating: 3.5, size: 'medium', description: 'Removes tough stains easily.' },
     { id: 12, name: 'Multipurpose soap survenir', image: soap, price: 1000, rating: 3.5, size: 'small', description: 'Souvenir multipurpose soap.' },
@@ -451,10 +451,11 @@ export default function Porducts() {
                 <div style={{ marginTop: '1rem' }}>
                   <p>Bank Transfer Details:</p>
                   <ul style={{ listStyle: 'none', paddingLeft: 0 ,padding:'1rem'}}>
-                    <li style={{color:'green',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Bank Name:</strong> Example Bank</li>
-                    <li style={{color:'green',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Account Number:</strong> 1234567890</li>
-                    <li style={{color:'green',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Account Name:</strong> 2klin sparkle</li>
-                    <li style={{color:'green',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Swift Code:</strong> EXAMP123</li>
+                    <li style={{color:'yellow',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Bank Name:</strong> Fidelity Bank OR Palmpay</li>
+                    <li style={{color:'yellow',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Account Number:</strong> 6323345384, 7047391302</li>
+                    <li style={{color:'yellow',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>Account Name:</strong>Obika Daberechi Faith</li>
+                    <br></br>
+                    <li style={{color:'green',paddingTop:'1rem'}}><strong style={{color:'white',paddingTop:'1rem'}}>SEND PAYMENT RECIEPT TO THIS WHATAPP NUMBER :</strong> 07047391302,08064850939</li>
                   </ul>
                 </div>
               )}

@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import klin from '../Image/2klin-Photoroom.png';
 import { FiShoppingCart, FiHeart, FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import { FaFacebookF, FaWhatsapp, FaTwitter, FaInstagram } from 'react-icons/fa';
-import { FaTiktok } from 'react-icons/fa6'; // ✅ TikTok icon
+import { FaTiktok } from 'react-icons/fa6'; 
+import Homepage from './Homepage';
+import { Link } from 'react-router-dom';
 
 const listContainer = {
   hidden: { opacity: 0, y: -20 },
@@ -57,7 +59,7 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
                 variants={listItem}
                 whileHover={{ scale: 1.1, color: '#15960c' }}
               >
-                {item}
+                <Link>{item}</Link>
               </motion.li>
             ))}
           </motion.ul>
@@ -200,7 +202,7 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
               marginTop: 'auto',
             }}
           >
-            <a href="https://facebook.com/Daberechukwu" target="_blank" rel="noopener noreferrer"><FaFacebookF size={24} /></a>
+            <a href="https://facebook.com/DabereChukwu" target="_blank" rel="noopener noreferrer"><FaFacebookF size={24} /></a>
             <a href="https://wa.me/7047391302" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={24} /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
