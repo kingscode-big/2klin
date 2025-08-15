@@ -4,7 +4,6 @@ import klin from '../Image/2klin-Photoroom.png';
 import { FiShoppingCart, FiHeart, FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import { FaFacebookF, FaWhatsapp, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { FaTiktok } from 'react-icons/fa6'; 
-import Homepage from './Homepage';
 import { Link } from 'react-router-dom';
 
 const listContainer = {
@@ -21,10 +20,16 @@ const listItem = {
   visible: { opacity: 1, y: 0 },
 };
 
+// Page route mapping
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+  { name: 'Contact', path: '/contact' },
+  { name: 'Place an Order', path: '/order-services' }
+];
+
 export default function Header({ searchQuery, setSearchQuery, searchResults, onSelectProduct }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const menuPages = ['Home', 'Products', 'Shop', 'Contact', 'Distributor'];
 
   return (
     <section>
@@ -41,7 +46,9 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <img className="App-logo" src={klin} alt="logo" />
+          <Link to="/">
+            <img className="App-logo" src={klin} alt="logo" />
+          </Link>
         </motion.div>
 
         {/* Nav list */}
@@ -52,14 +59,18 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
           animate="visible"
         >
           <motion.ul className="App-ul">
-            {['Home', 'Products', 'Shop', 'Contact', 'Order Services'].map((item, index) => (
+            {navLinks.map((link, index) => (
               <motion.li
                 key={index}
                 className="App-page-list"
                 variants={listItem}
                 whileHover={{ scale: 1.1, color: '#15960c' }}
               >
-                <Link>{item}</Link>
+                <Link to={link.path} style={{
+                  listStyle:'none',
+                  textDecoration:'none',
+                  color:'#333333'
+                }} >{link.name}</Link>
               </motion.li>
             ))}
           </motion.ul>
@@ -106,8 +117,8 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
           <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok /></a> {/* TikTok */}
-          <a href="tel:+1234567890"><FiPhone /></a> {/* Call */}
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
+          <a href="tel:+1234567890"><FiPhone /></a>
         </div>
 
         {/* Hamburger Menu */}
@@ -173,7 +184,7 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
               textAlign: 'start',
             }}
           >
-            {menuPages.map((page, i) => (
+            {navLinks.map((link, i) => (
               <li
                 key={i}
                 style={{
@@ -182,13 +193,14 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
                   cursor: 'pointer',
                   transition: 'color 0.3s',
                 }}
-                onClick={() => setMenuOpen(false)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') setMenuOpen(false);
-                }}
-                tabIndex={0}
               >
-                {page}
+                <Link
+                  to={link.path}
+                  style={{ color: 'white', textDecoration: 'none' }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -206,8 +218,8 @@ export default function Header({ searchQuery, setSearchQuery, searchResults, onS
             <a href="https://wa.me/7047391302" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={24} /></a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaTwitter size={24} /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram size={24} /></a>
-            <a href="https://www.tiktok.com/@daberechukwu24" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a> {/* TikTok */}
-            <a href="tel:+2347047391302"><FiPhone size={24} /></a> {/* Call */}
+            <a href="https://www.tiktok.com/@daberechukwu24" target="_blank" rel="noopener noreferrer"><FaTiktok size={24} /></a>
+            <a href="tel:+2347047391302"><FiPhone size={24} /></a>
           </div>
         </motion.div>
       )}
